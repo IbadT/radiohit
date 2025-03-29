@@ -78,9 +78,10 @@ const AccountAudioCard = ({ song, refetch, audioCardType }) => {
                 src={song.trackImageURL}
                 alt="avatar"
                 fill
+                quality={100}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
-                className="w-full h-full bg-cover object-cover"
+                className="w-full h-full bg-cover object-cover saturate-150"
               />
             )}
           {singleTrackData &&
@@ -100,9 +101,10 @@ const AccountAudioCard = ({ song, refetch, audioCardType }) => {
               src={song.trackImageURL}
               alt="avatar"
               fill
+              quality={100}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
-              className="w-full h-full bg-cover object-cover"
+              className="w-full h-full bg-cover object-cover saturate-150"
             />
           )}
           {!singleTrackData && (
@@ -110,9 +112,10 @@ const AccountAudioCard = ({ song, refetch, audioCardType }) => {
               src={song.trackImageURL}
               alt="avatar"
               fill
+              quality={100}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
-              className="w-full h-full bg-cover object-cover"
+              className="w-full h-full bg-cover object-cover saturate-150"
             />
           )}
         </div>

@@ -17,7 +17,8 @@ const components = {
       <Image
         {...props}
         alt="radiohit.by"
-        className="w-full h-full absolute object-cover"
+        quality={90}
+        className="w-full h-full absolute object-cover saturate-150 backdrop-saturate-125"
         fill
         loading={"lazy"}
       />

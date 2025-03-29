@@ -72,7 +72,8 @@ const ChartAudioCard = ({ song, index }) => {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
-                className="w-full h-full bg-cover object-cover"
+                quality={100}
+                className="w-full h-full bg-cover object-cover saturate-150"
               />
             )}
           {singleTrackData &&
@@ -94,7 +95,8 @@ const ChartAudioCard = ({ song, index }) => {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
-              className="w-full h-full bg-cover object-cover"
+              quality={100}
+              className="w-full h-full bg-cover object-cover saturate-150"
             />
           )}
           {!singleTrackData && (
@@ -104,7 +106,8 @@ const ChartAudioCard = ({ song, index }) => {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
-              className="w-full h-full bg-cover object-cover"
+              quality={100}
+              className="w-full h-full bg-cover object-cover saturate-150"
             />
           )}
         </div>

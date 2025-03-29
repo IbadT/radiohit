@@ -75,7 +75,8 @@ const SuperFmBannerCard = () => {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
           placeholder="blur"
-          className="w-full h-full bg-cover object-cover z-[0] grayscale-50"
+          quality={100}
+          className="w-full h-full bg-cover object-cover z-[0] grayscale-50 saturate-150 backdrop-saturate-125"
         />
       </div>
     </div>

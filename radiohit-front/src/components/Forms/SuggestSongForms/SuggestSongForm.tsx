@@ -758,7 +758,8 @@ const SuggestSongForm = () => {
                           alt="Обложка трека"
                           width={16}
                           height={16}
-                          className="h-16 w-16 rounded-lg object-cover"
+                          quality={80}
+                          className="h-16 w-16 rounded-lg object-cover saturate-150 backdrop-saturate-125"
                         />
                       </div>
                     </>

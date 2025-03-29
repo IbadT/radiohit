@@ -55,9 +55,10 @@ const HomeSlider = ({ poster }) => {
                 src={poster.posterImageURL}
                 alt="poster"
                 fill
+                quality={100}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
-                className="w-full h-full bg-cover object-cover z-[0] transition-all duration-300 pointer-events-none"
+                className="w-full h-full bg-cover object-cover z-[0] transition-all duration-300 pointer-events-none saturate-150 backdrop-saturate-125"
               />
             </div>
           </Link>

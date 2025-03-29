@@ -34,7 +34,8 @@ const EventsCard =({post}) =>{
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
-                className="w-full h-full bg-cover object-cover z-[0] grayscale-50 group-hover:grayscale-0 transition-all duration-300"
+                quality={100}
+                className="w-full h-full bg-cover object-cover z-[0] grayscale-50 group-hover:grayscale-0 transition-all duration-300 saturate-150 backdrop-saturate-125"
             />
         </div>
     );

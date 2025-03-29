@@ -15,10 +15,11 @@ const ArtistDetailsCard = ({ artist }) => {
             <Image
               src={artist.userImageURL}
               alt="avatar"
+              quality={100}
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               fill
-              className="w-full h-full bg-cover object-cover"
+              className="w-full h-full bg-cover object-cover saturate-150"
             />
           </div>
 

@@ -12,8 +12,9 @@ const ArtistCard = ({ artist }) => {
           alt="artist_avatar"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill
+          quality={100}
           priority
-          className="w-full h-full bg-cover object-cover"
+          className="w-full h-full bg-cover object-cover saturate-150"
         />
       </div>
         <div className='flex flex-row justify-between items-center w-full'>

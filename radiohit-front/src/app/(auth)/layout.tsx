@@ -21,8 +21,9 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
           src={auth_image}
           placeholder="blur"
           alt="radiohit"
+          quality={100}
           fill
-          className="absolute inset-0 object-cover max-md:!fixed max-md:blur-md"
+          className="absolute inset-0 object-cover max-md:!fixed max-md:blur-md saturate-150"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />

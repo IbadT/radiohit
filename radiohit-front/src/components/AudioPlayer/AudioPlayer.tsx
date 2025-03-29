@@ -209,7 +209,7 @@ const AudioPlayer = ({ isMobile }) => {
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority
-                        className="w-full h-full bg-cover object-cover"
+                        className="w-full h-full bg-cover object-cover saturate-150"
                       />
                     </div>
                   )}
