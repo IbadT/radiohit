@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /*Main colors*/
+    --main-accent: #a21caf;
+    --main-dark: #363636;
+    --main-gray: #E9E9E9;
+
+    /*--layout-bg: #fcf9ff;*/
+    --layout-bg: #FBFAFD;
+
+    --main-border-color: #EDEDED;
+
+    /*UI Library*/
+    --background: #ffffff;
+    --foreground: #0F172A;
+
+    --muted: #F1F5F9;
+    --muted-foreground: #64748B;
+
+    --popover: #FFFFFF;
+    --popover-foreground: #0F172A;
+
+    --card: #FFFFFF;
+    --card-foreground: #0F172A;
+
+    --border: #E2E8F0;
+    --input: #E2E8F0;
+
+    --primary: #0F172A;
+    --primary-foreground: #F8FAFC;
+
+    --secondary: #F1F5F9;
+    --secondary-foreground: #0F172A;
+
+    --accent: #F1F5F9;
+    --accent-foreground: #0F172A;
+
+    --destructive: #FF0000;
+    --destructive-foreground: #F8FAFC;
+
+    --ring: #c026d3;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    color: #404040;
+    overflow-x: hidden;
+  }
+}
+
+*::selection {
+  background: #a21caf;
+  color: #ffffff;
+}
+
+*::-moz-selection {
+  background: #a21caf;
+  color: #ffffff;
+}
+
+*::-webkit-selection {
+  background: #a21caf;
+  color: #ffffff;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/*BreadCrumbs */
+.breadcrumbs-list > li:not(:last-child)::after {
+  content: '/';
+  padding-right: 8px;
+  padding-left: 8px;
+}
+/*END BreadCrumbs */
+
+/*Music Animation*/
+
+.soundLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#wave {
+  height: 2rem;
+  width: 2rem;
+}
+
+.audioLine {
+  animation: music-pulse 1s ease infinite;
+}
+
+.audioLine:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.audioLine:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.audioLine:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.audioLine:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.audioLine:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+.audioLine:nth-child(6) {
+  animation-delay: 0.9s;
+}
+
+.audioLine:nth-child(7) {
+  animation-delay: 1.05s;
+}
+
+.audioLine:nth-child(8) {
+  animation-delay: 1.2s;
+}
+
+.audioLine:nth-child(9) {
+  animation-delay: 1.35s;
+}
+
+@keyframes music-pulse {
+  0% {
+    transform: scaleY(1);
+    transform-origin: 50% 50%;
+  }
+  50% {
+    transform: scaleY(0.7);
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 50% 50%;
+  }
+}
+/*END Music Animation*/
+
+
+/*Hide Scrollbar Trick*/
+.hide-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 1px;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+/*END Hide Scrollbar Trick*/
+
+
+.videos_home_slider_side_gradient:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -1.5rem;
+  z-index: 4;
+  bottom: 0;
+  width: 200px;
+  /* left: 0; */
+  background: linear-gradient(-90deg, rgba(249, 250, 255, 1) 20%, rgba(249, 250, 255, 0) 70%, rgba(249, 250, 255, 0) 100%);
+}
+
+@media screen and (max-width: 1200px ) {
+  .videos_home_slider_side_gradient:after{
+    display: none;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+.no-spin {
+  -moz-appearance:textfield !important;
+}
+
+.recharts-layer.recharts-pie,
+.recharts-sector:focus,
+.recharts-layer:focus{
+  outline: none !important;
+  outline-color: transparent;
+  outline-style: none;
+  outline-width: 0;
+  border: none!important;
+  border: 0;
+}

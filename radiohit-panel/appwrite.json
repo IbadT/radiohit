@@ -1,0 +1,26 @@
+{
+    "projectId": "674085d8002692094a1d",
+    "projectName": "",
+    "functions": [
+        {
+            "$id": "64d37d4aea5ce4877246",
+            "name": "reload-radio-server",
+            "runtime": "node-16.0",
+            "path": "functions/reload-radio-server",
+            "entrypoint": "src/index.js",
+            "enabled": true,
+            "logging": true,
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [
+                "databases.6745a44e0026f7000fd7.collections.6745de410006148949ab.documents.mainRadioPlaylist.update"
+            ],
+            "commands": "npm install",
+            "schedule": "",
+            "timeout": 1
+        }
+    ]
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiohit.by | Информация о треке</title>
+    <style>
+        body {
+            margin-top: 5rem;
+            font-family: sans-serif;
+        }
+
+        .pdf-box {
+            width: 600px;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .pdf-header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #d1d1d1;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .logo {
+            position: relative;
+            max-width: 150px;
+        }
+
+        .header-text {
+            font-size: 0.8rem;
+        }
+
+
+        .artist-box {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .artist-image-container {
+            margin-top: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+            background: #E2E8F0;
+            background-size: cover;
+            min-width: 150px;
+        }
+
+        #artist-image {
+            width: 150px;
+            height: auto;
+        }
+
+        .artist-info {
+            border-bottom: 1px solid #d1d1d1;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .artist-info-container {
+            margin-left: 20px;
+        }
+
+        #artist-name {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+
+        .country-box {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .artist-description-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-p,
+        .country-box {
+            margin-bottom: 0;
+        }
+
+        .desc {
+            margin-top: 0;
+        }
+
+        #artist-description {
+            font-size: 14px;
+        }
+
+        .main-p {
+            font-weight: bold;
+        }
+
+        .song-info-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .song-image {
+            margin-top: 10px;
+            margin-right: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 80px;
+            height: 80px;
+            background: #E2E8F0;
+            background-size: cover;
+            min-width: 80px;
+        }
+
+        #song-image {
+            width: 80px;
+            height: auto;
+        }
+
+        .song-description {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .track-title{
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .download-pdf-btn{
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-btn {
+            width: 600px;
+            background: #fdf4ff;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+            color: #c026d3;
+            border: 1px solid #c026d3;
+        }
+
+        .download-btn:hover {
+            opacity: 0.8;
+            transition:opacity .5s ease;
+        }
+
+        .download-btn:not(:hover) {
+            transition:opacity .5s ease;
+        }
+    </style>
+</head>
+
+<body class='pdf-body'>
+<div class="pdf-box" id="element-to-print">
+    <div class="pdf-header">
+        <a href="https://radiohit.by" target="_blank">
+            <div class="logo-container">
+                <img src="radiohit-logo.png" alt="logo" class="logo">
+            </div>
+        </a>
+        <p class="header-text">Информация о треке</p>
+    </div>
+    <div class="artist-info">
+
+        <div class="artist-box">
+            <div class="artist-image-container">
+                <img id="artist-image" src="" alt="artist_image">
+            </div>
+            <div class="artist-info-container">
+                <p id="artist-name"></p>
+                <div class="country-box">
+                    <p class="main-p">Страна:</p>
+                    <p id="artist-country"></p>
+                </div>
+                <div class="artist-description-container">
+                    <p class="main-p desc">Описание:</p>
+                    <p id="artist-description">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="song-info-container">
+        <div class="song-image">
+            <img id="song-image" src="" alt="song_image">
+        </div>
+        <div class="song-description">
+            <p id="song-artist-name">Калава Кока</p>
+            -
+            <p id="song-name">Песня</p>
+        </div>
+    </div>
+</div>
+
+<!--<div class="download-pdf-btn" id="download-pdf">-->
+<!--    <p class="download-btn">Скачать как PDF</p>-->
+<!--</div>-->
+
+</body>
+<!--<script src="html2pdf.bundle.min.js"></script>-->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const artistName = urlParams.get('artistName');
+    const artistImageURL = urlParams.get('artistImageURL');
+    const artistCountry = urlParams.get('artistCountry');
+    const artistDescription = urlParams.get('artistDescription');
+    const songName = urlParams.get('songName');
+    const songImageURL = urlParams.get('songImageURL');
+
+
+    document.getElementById('artist-image').src = artistImageURL
+    document.getElementById('artist-name').innerHTML = artistName;
+    document.getElementById('artist-country').innerHTML = artistCountry;
+    document.getElementById('artist-description').innerHTML = artistDescription;
+    document.getElementById('song-name').innerHTML = songName;
+    document.getElementById('song-image').src = songImageURL;
+    document.getElementById('song-artist-name').innerHTML = artistName;
+    const printElement = document.getElementById('element-to-print');
+
+
+
+    // let pdfOptions = {
+    //     filename:     `${artistName} - ${songName}_RadioHit.pdf`,
+    //     html2canvas:  { scale: 2 },
+    //     jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    // };
+    //
+    // document.getElementById('download-pdf').addEventListener('click', function(e) {
+    //     html2pdf(printElement, pdfOptions);
+    // });
+
+</script>
+
+</html>
