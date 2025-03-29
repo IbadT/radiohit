@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  # Сервер радио
+  app:
+    platform: linux/amd64
+    build: 
+      context: ./radio-server
+      dockerfile: Dockerfile
+    container_name: radiohit-radio-server
+    restart: on-failure
+    ports:
+      - 55392:55392
+
+  # Сайт
+  site:
+    build:
+      context: ./radiohit-front
+      dockerfile: Dockerfile
+    container_name: site
+    restart: unless-stopped
+    ports:
+      - 3001:3000
+    environment:
+      - NODE_ENV=production
+
+  # Админ-панель
+  admin_panel:
+    build:
+      context: ./radiohit-panel
+      dockerfile: Dockerfile
+    container_name: admin-panel
+    restart: unless-stopped
+    ports:
+      - 3002:3000
+    environment:
+      - NODE_ENV=production
